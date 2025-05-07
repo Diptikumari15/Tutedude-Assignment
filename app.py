@@ -16,7 +16,7 @@ db = client["notes_db"]  # Database name
 collection = db["notes"]  # Collection name
 
 # Route: Home page - Shows form and list of notes
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/submittodoitem', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         # Get form data
