@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do</h1>
+
+        <form method="POST">
+            <input type="text" name="title" placeholder="Item Name" required><br>
+            <textarea name="content" placeholder="Item Description" required></textarea><br>
+            <button type="submit">Add</button>
+        </form>
+
+        <h2>All To-Do</h2>
+        <div class="notes">
+            {% for note in notes %}
+                <div class="note">
+                    <h3>{{ note['title'] }}</h3>
+                    <p>{{ note['content'] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
